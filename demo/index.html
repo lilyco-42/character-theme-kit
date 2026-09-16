@@ -120,6 +120,7 @@ const models = [
 const grid = document.getElementById('grid');
 let pixiApp = null;
 let currentModel = null;
+let typingInterval = null;
 
 models.forEach((m, i) => {
   const card = document.createElement('div');
@@ -151,6 +152,7 @@ function openModal(m) {
 
 function closeModal() {
   document.getElementById('modal').classList.remove('active');
+  stopTyping();
   if (currentModel) {
     pixiApp.stage.removeChild(currentModel);
     currentModel = null;
@@ -185,9 +187,33 @@ async function loadModel(modelDir) {
         currentModel.focus(pos.x, pos.y);
       }
     });
+    startTyping();
   } catch(e) {
     console.error('Model load error:', e);
   }
+}
+
+function startTyping() {
+  stopTyping();
+  // Auto-typing animation: randomly trigger hand motions
+  typingInterval = setInterval(() => {
+    if (!currentModel) return;
+    try {
+      const core = currentModel.internalModel.coreModel;
+      // Random hand down/up to simulate typing
+      const leftDown = Math.random() > 0.5 ? 1 : 0;
+      const rightDown = Math.random() > 0.5 ? 1 : 0;
+      core.setParameterValueById('CatParamLeftHandDown', leftDown);
+      core.setParameterValueById('CatParamRightHandDown', rightDown);
+      // Also try generic params
+      core.setParameterValueById('ParamHandL', Math.random() > 0.5 ? 1 : 0);
+      core.setParameterValueById('ParamHandR', Math.random() > 0.5 ? 1 : 0);
+    } catch(e) {}
+  }, 200);
+}
+
+function stopTyping() {
+  if (typingInterval) { clearInterval(typingInterval); typingInterval = null; }
 }
 </script>
 </body>
