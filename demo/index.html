@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BongoCat 皮肤在线演示</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f0f1a;color:#fff;overflow:hidden;height:100vh}
+#app{width:100vw;height:100vh}
+.overlay{position:fixed;top:20px;left:50%;transform:translateX(-50%);text-align:center;z-index:10}
+.overlay h1{font-size:1.5em;background:linear-gradient(90deg,#e94560,#ff6b9d);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.overlay p{color:#888;font-size:0.9em;margin-top:5px}
+.controls{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
+.controls button{background:#1a1a2e;border:1px solid #e94560;color:#fff;padding:8px 20px;border-radius:20px;cursor:pointer;font-size:0.9em;transition:all .2s}
+.controls button:hover{background:#e94560}
+.back{position:fixed;top:20px;left:20px;z-index:10}
+.back a{color:#888;text-decoration:none;font-size:0.9em}
+.back a:hover{color:#e94560}
+</style>
+</head>
+<body>
+<div class="back"><a href="../shop.html">← 返回商店</a></div>
+<div class="overlay">
+  <h1>BongoCat 在线演示</h1>
+  <p>移动鼠标与角色互动 · 点击切换表情</p>
+</div>
+<div id="app"></div>
+<div class="controls">
+  <button onclick="nextModel()">切换模型</button>
+  <button onclick="window.open('https://github.com/lilyco-42/character-theme-kit/releases','_blank')">下载57款皮肤包</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.10/dist/browser/pixi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display@0.4.0/dist/index.min.js"></script>
+<script>
+const app = new PIXI.Application({
+  view: document.getElementById('app'),
+  width: window.innerWidth,
+  height: window.innerHeight,
+  autoStart: true,
+  backgroundAlpha: 0,
+  resizeTo: window
+});
+
+let currentModel = null;
+const models = [
+  { name: 'doro', path: 'models/doro/cat.model3.json' }
+];
+let modelIndex = 0;
+
+async function loadModel(path) {
+  try {
+    if (currentModel) app.stage.removeChild(currentModel);
+    const model = await PIXI.live2d.Live2DModel.from(path);
+    const scale = Math.min(app.screen.width / model.width, app.screen.height / model.height) * 0.8;
+    model.scale.set(scale);
+    model.x = app.screen.width / 2;
+    model.y = app.screen.height / 2;
+    model.anchor.set(0.5, 0.5);
+    app.stage.addChild(model);
+    currentModel = model;
+    // Click to trigger expression
+    model.on('pointertap', () => {
+      const exps = model.internalModel.settings.expressions;
+      if (exps && exps.length) {
+        const exp = exps[Math.floor(Math.random() * exps.length)];
+        model.internalModel.motionManager.expressionManager?.setExpression(exp.name);
+      }
+    });
+    // Mouse tracking
+    app.stage.on('pointermove', (e) => {
+      if (currentModel) {
+        const pos = e.data.global;
+        currentModel.focus(pos.x, pos.y);
+      }
+    });
+  } catch(e) {
+    console.error('模型加载失败:', e);
+  }
+}
+
+function nextModel() {
+  modelIndex = (modelIndex + 1) % models.length;
+  loadModel(models[modelIndex].path);
+}
+
+loadModel(models[0].path);
+</script>
+</body>
+</html>
