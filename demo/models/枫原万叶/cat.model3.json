@@ -3,7 +3,7 @@
 	"FileReferences": {
 		"Moc": "cat.moc3",
 		"Textures": [
-			"cat.1024/texture_00.png"
+			"cat.2048/texture_00.png"
 		],
 		"Physics": "cat.physics3.json",
 		"DisplayInfo": "cat.cdi3.json",
@@ -59,3 +59,4 @@
 	],
 	"HitAreas": []
 }
+
