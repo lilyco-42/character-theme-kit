@@ -58,7 +58,7 @@ models.forEach((m,i) => {
   const num = String(i+1).padStart(2,'0');
   const card = document.createElement('div');
   card.className = 'card';
-  card.innerHTML = '<img src="gallery/' + num + '_' + m[0].replace(/[\s·]/g,'_') + '.png" loading="lazy" onerror="this.style.background=\'#1a1a2e\'"><div class="name">' + m[1] + '</div>';
+  card.innerHTML = '<img src="gallery/' + num + '_' + m[0].replace(/[\s·]/g,'_') + '.png" onerror="this.style.background=\'#1a1a2e\'"><div class="name">' + m[1] + '</div>';
   grid.appendChild(card);
 });
 </script>
