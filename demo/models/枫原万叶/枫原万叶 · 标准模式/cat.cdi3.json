@@ -1,0 +1,452 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param21",
+			"GroupId": "",
+			"Name": "猫耳"
+		},
+		{
+			"Id": "Param19",
+			"GroupId": "",
+			"Name": "枫叶"
+		},
+		{
+			"Id": "Param20",
+			"GroupId": "",
+			"Name": "枫叶动"
+		},
+		{
+			"Id": "Param17",
+			"GroupId": "",
+			"Name": "吹叶子"
+		},
+		{
+			"Id": "Param14",
+			"GroupId": "",
+			"Name": "桌子下面消失"
+		},
+		{
+			"Id": "ParamMouseLeftDown",
+			"GroupId": "",
+			"Name": "鼠标左键按下"
+		},
+		{
+			"Id": "ParamMouseRightDown",
+			"GroupId": "",
+			"Name": "鼠标右键按下"
+		},
+		{
+			"Id": "CatParamLeftHandDown",
+			"GroupId": "",
+			"Name": "键盘按下"
+		},
+		{
+			"Id": "ParamMouseX",
+			"GroupId": "",
+			"Name": "鼠标X"
+		},
+		{
+			"Id": "ParamMouseY",
+			"GroupId": "",
+			"Name": "鼠标Y"
+		},
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "左眼　开闭"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "左眼　微笑"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "右眼"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "右眼　微笑"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "眼珠 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "眼珠 Y"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "",
+			"Name": "左眉上下"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "",
+			"Name": "右眉　上下"
+		},
+		{
+			"Id": "ParamBrowLX",
+			"GroupId": "",
+			"Name": "左眉　左右"
+		},
+		{
+			"Id": "ParamBrowRX",
+			"GroupId": "",
+			"Name": "右眉　左右"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "",
+			"Name": "左眉　角度"
+		},
+		{
+			"Id": "ParamBrowRAngle",
+			"GroupId": "",
+			"Name": "右眉　角度"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "",
+			"Name": "左眉　変形"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "",
+			"Name": "右眉　変形"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "嘴　变形"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "嘴　张开和闭合"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "",
+			"Name": "脸颊泛红"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "身体旋转　X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "身体旋转　Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "身体旋转　Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "",
+			"Name": "摇动 前发"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "摇动 侧发"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "",
+			"Name": "摇动 后发"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "眼睛X"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "眼睛Y"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "高光"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "呆毛"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "中间头发"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "右边头发1"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "右边头发2"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "右边头发3"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "左边头发1"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "左边头发2"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "左边头发3"
+		},
+		{
+			"Id": "Param12",
+			"GroupId": "",
+			"Name": "左边头发4"
+		},
+		{
+			"Id": "Param13",
+			"GroupId": "",
+			"Name": "后面辫子"
+		},
+		{
+			"Id": "Param15",
+			"GroupId": "",
+			"Name": "挂饰动"
+		},
+		{
+			"Id": "Param16",
+			"GroupId": "",
+			"Name": "外套带子动"
+		},
+		{
+			"Id": "Param18",
+			"GroupId": "",
+			"Name": "吹叶子衣服动"
+		},
+		{
+			"Id": "Param22",
+			"GroupId": "",
+			"Name": "耳朵动"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part",
+			"Name": "枫叶"
+		},
+		{
+			"Id": "Part2",
+			"Name": "按键盘手"
+		},
+		{
+			"Id": "Part3",
+			"Name": "桌子"
+		},
+		{
+			"Id": "Part4",
+			"Name": "按键"
+		},
+		{
+			"Id": "Part5",
+			"Name": "叶子"
+		},
+		{
+			"Id": "Part6",
+			"Name": "吹叶子左手"
+		},
+		{
+			"Id": "Part7",
+			"Name": "吹叶子右手"
+		},
+		{
+			"Id": "Part8",
+			"Name": "呆毛"
+		},
+		{
+			"Id": "Part9",
+			"Name": "前面头发"
+		},
+		{
+			"Id": "Part10",
+			"Name": "左眼"
+		},
+		{
+			"Id": "Part11",
+			"Name": "右眼"
+		},
+		{
+			"Id": "Part12",
+			"Name": "嘴巴"
+		},
+		{
+			"Id": "Part13",
+			"Name": "面部"
+		},
+		{
+			"Id": "Part14",
+			"Name": "护甲"
+		},
+		{
+			"Id": "Part15",
+			"Name": "挂饰1"
+		},
+		{
+			"Id": "Part16",
+			"Name": "挂饰2"
+		},
+		{
+			"Id": "Part17",
+			"Name": "围巾"
+		},
+		{
+			"Id": "Part18",
+			"Name": "脖子"
+		},
+		{
+			"Id": "Part19",
+			"Name": "腰饰"
+		},
+		{
+			"Id": "Part20",
+			"Name": "腰饰2"
+		},
+		{
+			"Id": "Part21",
+			"Name": "腰饰3"
+		},
+		{
+			"Id": "Part22",
+			"Name": "腰饰4"
+		},
+		{
+			"Id": "Part23",
+			"Name": "外套"
+		},
+		{
+			"Id": "Part24",
+			"Name": "外套下面前半"
+		},
+		{
+			"Id": "Part25",
+			"Name": "腰饰5"
+		},
+		{
+			"Id": "Part26",
+			"Name": "左脚"
+		},
+		{
+			"Id": "Part27",
+			"Name": "右脚"
+		},
+		{
+			"Id": "Part28",
+			"Name": "身体"
+		},
+		{
+			"Id": "Part29",
+			"Name": "左手小臂"
+		},
+		{
+			"Id": "Part30",
+			"Name": "左手放桌"
+		},
+		{
+			"Id": "Part31",
+			"Name": "鼠标手"
+		},
+		{
+			"Id": "Part32",
+			"Name": "鼠标"
+		},
+		{
+			"Id": "Part33",
+			"Name": "鼠标手小臂"
+		},
+		{
+			"Id": "Part34",
+			"Name": "左手大臂"
+		},
+		{
+			"Id": "Part35",
+			"Name": "鼠标手大臂"
+		},
+		{
+			"Id": "Part36",
+			"Name": "左耳"
+		},
+		{
+			"Id": "Part37",
+			"Name": "右耳"
+		},
+		{
+			"Id": "Part38",
+			"Name": "后面头发"
+		},
+		{
+			"Id": "Part39",
+			"Name": "辫子"
+		},
+		{
+			"Id": "Part40",
+			"Name": "凳子"
+		},
+		{
+			"Id": "Part41",
+			"Name": "外套下面后面"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamMouseX",
+			"ParamMouseY"
+		],
+		[
+			"Param",
+			"Param2"
+		]
+	]
+}
