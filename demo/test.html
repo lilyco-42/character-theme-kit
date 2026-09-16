@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Live2D Test</title>
+<style>body{margin:0;background:#222} canvas{display:block}</style>
+</head>
+<body>
+<canvas id="view"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.10/dist/browser/pixi.min.js"></script>
+<script src="lib/live2dcubismcore.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/cubism4.min.js"></script>
+<script>
+window.PIXI = PIXI;
+const app = new PIXI.Application({
+  view: document.getElementById('view'),
+  width: window.innerWidth,
+  height: window.innerHeight,
+  backgroundAlpha: 0,
+  antialias: true
+});
+
+// Load doro model
+PIXI.live2d.Live2DModel.from('models/doro/cat.model3.json').then(model => {
+  model.anchor.set(0.5);
+  model.position.set(window.innerWidth/2, window.innerHeight/2);
+  model.scale.set(Math.min(window.innerWidth/model.width, window.innerHeight/model.height) * 0.6);
+  app.stage.addChild(model);
+  
+  // Auto typing animation
+  setInterval(() => {
+    try {
+      const core = model.internalModel.coreModel;
+      core.setParameterValueById('CatParamLeftHandDown', Math.random()>0.5?1:0);
+      core.setParameterValueById('CatParamRightHandDown', Math.random()>0.5?1:0);
+    } catch(e){}
+  }, 250);
+  
+  console.log('Model loaded, textures:', model.internalModel.textures?.length);
+}).catch(e => console.error('Failed:', e));
+</script>
+</body>
+</html>
