@@ -1,10 +1,10 @@
-{
+﻿{
 	"Version": 3,
 	"FileReferences": {
 		"Moc": "cat.moc3",
 		"Textures": [
-			"cat.8192/texture_00.png",
-			"cat.8192/texture_01.png"
+			"cat.1024/texture_00.png",
+			"cat.1024/texture_01.png"
 		],
 		"Physics": "cat.physics3.json",
 		"DisplayInfo": "cat.cdi3.json"
