@@ -32,8 +32,18 @@ body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f0f1a;c
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.10/dist/browser/pixi.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/live2dcubismcore@1.0.0/dist/live2dcubismcore.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display@0.4.0/dist/cubism4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display@master/dist/cubism4.min.js"></script>
+<script>
+// cubismcore is bundled in cubism4.min.js for master branch
+window.addEventListener('load', () => {
+  if (typeof Live2DCubismCore === 'undefined') {
+    // fallback: load from official
+    const s = document.createElement('script');
+    s.src = 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js';
+    document.head.appendChild(s);
+  }
+});
+</script>
 <script>
 const app = new PIXI.Application({
   view: document.getElementById('app'),
