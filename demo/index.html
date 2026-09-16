@@ -22,15 +22,12 @@ body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f0f1a;c
 .back{position:fixed;top:15px;left:15px;z-index:10}
 .back a{color:#888;text-decoration:none;font-size:0.85em}
 
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:100}
 .modal.active{display:block}
-.modal canvas{width:100%;height:100%;position:absolute;top:0;left:0}
+.modal canvas{position:absolute;top:0;left:0;width:100%;height:100%}
 .modal .modal-close{position:fixed;top:20px;right:20px;z-index:10;background:#e94560;color:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:1.3em;cursor:pointer}
 .modal .modal-title{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:10;font-size:1.2em;color:#fff}
-.modal .modal-img{display:none;max-width:90vw;max-height:80vh;object-fit:contain;border-radius:12px;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}
-.modal .modal-action{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:10;text-align:center;display:none}
-.modal .modal-action a{display:inline-block;background:#e94560;color:#fff;padding:12px 28px;border-radius:25px;text-decoration:none;font-weight:600;margin:0 5px}
-.modal .modal-hint{color:#888;font-size:0.85em;margin-top:8px}
+.modal .modal-hint{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:10;color:#888;font-size:0.85em}
 </style>
 </head>
 <body>
@@ -50,16 +47,12 @@ body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f0f1a;c
   <button class="modal-close" onclick="closeModal()">×</button>
   <div class="modal-title" id="modalTitle"></div>
   <canvas id="modalCanvas"></canvas>
-  <img class="modal-img" id="modalImg" src="">
-  <div class="modal-action" id="modalAction">
-    <a href="https://github.com/ayangweb/BongoCat/releases" target="_blank">下载BongoCat体验实时键盘同步</a>
-    <div class="modal-hint">大图预览 · 下载主程序后安装皮肤即可打字互动</div>
-  </div>
+  <div class="modal-hint">移动鼠标互动 · 自动打字动画中</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.10/dist/browser/pixi.min.js"></script>
 <script src="lib/live2dcubismcore.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/cubism4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display@0.4.0/dist/cubism4.min.js"></script>
 <script>
 window.PIXI = PIXI;
 
@@ -138,54 +131,30 @@ models.forEach((m) => {
 
 function openModal(m) {
   document.getElementById('modalTitle').textContent = m.name;
-  const modal = document.getElementById('modal');
-  const img = document.getElementById('modalImg');
-  const action = document.getElementById('modalAction');
-  const canvas = document.getElementById('modalCanvas');
+  document.getElementById('modal').classList.add('active');
 
-  modal.classList.add('active');
+  if (!pixiApp) {
+    pixiApp = new PIXI.Application({
+      view: document.getElementById('modalCanvas'),
+      width: window.innerWidth,
+      height: window.innerHeight,
+      backgroundAlpha: 0,
+      antialias: true
+    });
+  }
 
   if (m.model) {
-    // Try Live2D
-    img.style.display = 'none';
-    action.style.display = 'none';
-    canvas.style.display = 'block';
-    setTimeout(async () => {
-      try {
-        if (!pixiApp) {
-          pixiApp = new PIXI.Application({
-            view: canvas,
-            width: window.innerWidth,
-            height: window.innerHeight,
-            backgroundAlpha: 0,
-            antialias: true,
-            resizeTo: window
-          });
-        }
-        const model = await PIXI.live2d.Live2DModel.from('models/' + m.model + '/cat.model3.json');
-        const scale = Math.min(window.innerWidth / model.width, window.innerHeight / model.height) * 0.6;
-        model.scale.set(scale);
-        model.anchor.set(0.5, 0.5);
-        pixiApp.stage.addChild(model);
-        currentModel = model;
-        startTyping();
-      } catch(e) {
-        console.error('Live2D failed:', e);
-        showImagePreview(m);
-      }
-    }, 200);
-  } else {
-    showImagePreview(m);
+    PIXI.live2d.Live2DModel.from('models/' + m.model + '/cat.model3.json').then(model => {
+      if (currentModel) { pixiApp.stage.removeChild(currentModel); currentModel = null; }
+      model.anchor.set(0.5);
+      model.position.set(window.innerWidth/2, window.innerHeight/2);
+      const s = Math.min(window.innerWidth/model.width, window.innerHeight/model.height) * 0.7;
+      model.scale.set(s);
+      pixiApp.stage.addChild(model);
+      currentModel = model;
+      startTyping();
+    }).catch(e => console.error('Model load failed:', e));
   }
-}
-
-function showImagePreview(m) {
-  const img = document.getElementById('modalImg');
-  const action = document.getElementById('modalAction');
-  document.getElementById('modalCanvas').style.display = 'none';
-  img.src = 'gallery/' + m.img;
-  img.style.display = 'block';
-  action.style.display = 'block';
 }
 
 function startTyping() {
@@ -194,10 +163,8 @@ function startTyping() {
     if (!currentModel) return;
     try {
       const core = currentModel.internalModel.coreModel;
-      const lh = Math.random() > 0.5 ? 1 : 0;
-      const rh = Math.random() > 0.5 ? 1 : 0;
-      core.setParameterValueById('CatParamLeftHandDown', lh);
-      core.setParameterValueById('CatParamRightHandDown', rh);
+      core.setParameterValueById('CatParamLeftHandDown', Math.random()>0.5?1:0);
+      core.setParameterValueById('CatParamRightHandDown', Math.random()>0.5?1:0);
     } catch(e) {}
   }, 250);
 }
