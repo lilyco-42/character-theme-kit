@@ -22,13 +22,13 @@ body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f0f1a;c
 .back{position:fixed;top:15px;left:15px;z-index:10}
 .back a{color:#888;text-decoration:none;font-size:0.85em}
 
-/* Modal */
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;flex-direction:column;align-items:center;justify-content:center}
-.modal.active{display:flex}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100}
+.modal.active{display:block}
+.modal canvas{width:100%;height:100%;position:absolute;top:0;left:0}
 .modal .modal-close{position:fixed;top:20px;right:20px;z-index:10;background:#e94560;color:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:1.3em;cursor:pointer}
-.modal .modal-title{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:10;font-size:1.3em;color:#fff}
-.modal .modal-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:12px;box-shadow:0 0 60px rgba(233,69,96,.3)}
-.modal .modal-action{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:10;text-align:center}
+.modal .modal-title{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:10;font-size:1.2em;color:#fff}
+.modal .modal-img{display:none;max-width:90vw;max-height:80vh;object-fit:contain;border-radius:12px;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}
+.modal .modal-action{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:10;text-align:center;display:none}
 .modal .modal-action a{display:inline-block;background:#e94560;color:#fff;padding:12px 28px;border-radius:25px;text-decoration:none;font-weight:600;margin:0 5px}
 .modal .modal-hint{color:#888;font-size:0.85em;margin-top:8px}
 </style>
@@ -37,7 +37,7 @@ body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f0f1a;c
 <div class="back"><a href="../shop.html">← 返回商店</a></div>
 <div class="hero">
   <h1>BongoCat 精选皮肤包</h1>
-  <p>57款热门二次元桌宠 · 实时同步键盘鼠标 · 点击卡片查看大图</p>
+  <p>57款热门二次元桌宠 · 实时同步键盘鼠标 · 点击卡片互动预览</p>
   <div class="badge">57 款皮肤</div>
 </div>
 <div class="cta">
@@ -49,75 +49,85 @@ body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f0f1a;c
 <div class="modal" id="modal">
   <button class="modal-close" onclick="closeModal()">×</button>
   <div class="modal-title" id="modalTitle"></div>
+  <canvas id="modalCanvas"></canvas>
   <img class="modal-img" id="modalImg" src="">
-  <div class="modal-action">
+  <div class="modal-action" id="modalAction">
     <a href="https://github.com/ayangweb/BongoCat/releases" target="_blank">下载BongoCat体验实时键盘同步</a>
     <div class="modal-hint">大图预览 · 下载主程序后安装皮肤即可打字互动</div>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.10/dist/browser/pixi.min.js"></script>
+<script src="lib/live2dcubismcore.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/cubism4.min.js"></script>
 <script>
+window.PIXI = PIXI;
+
 const models = [
-  {img:"01_doro.png", name:"doro"},
-  {img:"02_RUPA.png", name:"RUPA"},
-  {img:"03_nai_lin.png", name:"乃琳"},
-  {img:"04_jingqin_renna.png", name:"井芹仁菜"},
-  {img:"05_chou_yuan.png", name:"仇远"},
-  {img:"06_dongli_cat.png", name:"动力小猫"},
-  {img:"07_qian_xiao.png", name:"千咲"},
-  {img:"08_ka_ti.png", name:"卡提"},
-  {img:"09_klee.png", name:"可莉"},
-  {img:"10_gardener.png", name:"园丁"},
-  {img:"11_su_xin.png", name:"塑心"},
-  {img:"12_dashachun.png", name:"大傻椿"},
-  {img:"13_dayuexia.png", name:"大月下"},
-  {img:"14_zi_yin.png", name:"子音"},
-  {img:"15_nie_xi.png", name:"孽蜥"},
-  {img:"16_night_watch.png", name:"守夜人"},
-  {img:"17_shorekeeper.png", name:"守岸人"},
-  {img:"18_anhe_mou.png", name:"安和昴"},
-  {img:"19_little_girl.png", name:"小女孩"},
-  {img:"20_panda_haohao.png", name:"小熊猫昊昊"},
-  {img:"21_floro.png", name:"弗洛洛"},
-  {img:"22_gui_zhong.png", name:"归终"},
-  {img:"23_dino_huaying.png", name:"恐龙流萤"},
-  {img:"24_you_mi.png", name:"悠米"},
-  {img:"25_fool_gold.png", name:"愚人金"},
-  {img:"26_xingjian_ya.png", name:"星见雅"},
-  {img:"27_kazuha.png", name:"枫原万叶"},
-  {img:"28_dream_witch.png", name:"梦之女巫"},
-  {img:"29_haragi_momoka.png", name:"河原木桃香"},
-  {img:"30_huaying.png", name:"流萤"},
-  {img:"31_ebizuka_sat.png", name:"海老塚智"},
-  {img:"32_wendy.png", name:"温蒂"},
-  {img:"33_venti.png", name:"温迪"},
-  {img:"34_mansui.png", name:"满穗"},
-  {img:"35_elysia.png", name:"爱莉希雅"},
-  {img:"36_cleita.png", name:"珂莱塔"},
-  {img:"37_kokomi.png", name:"珊瑚宫心海"},
-  {img:"38_pidan.png", name:"皮蛋"},
-  {img:"39_zi_min.png", name:"籽岷"},
-  {img:"40_pink_angel.png", name:"粉红天使"},
-  {img:"41_classic_kb.png", name:"经典小键盘"},
-  {img:"42_oyama_mahiro.png", name:"绪山真寻"},
-  {img:"43_luo_xiaohei.png", name:"罗小黑"},
-  {img:"44_aiseya.png", name:"艾瑟雅"},
-  {img:"45_mo_ning.png", name:"莫宁"},
-  {img:"46_phoebe.png", name:"菲比"},
-  {img:"47_executor.png", name:"送葬人"},
-  {img:"48_xiaoyao_sanren.png", name:"逍遥散人"},
-  {img:"49_bangboo.png", name:"邦布"},
-  {img:"50_silver_wolf.png", name:"银狼"},
-  {img:"51_jingliu.png", name:"镜流"},
-  {img:"52_jingliu_gamepad.png", name:"镜流(手柄)"},
-  {img:"53_rongmei.png", name:"阮梅"},
-  {img:"54_rongmei_gamepad.png", name:"阮梅(手柄)"},
-  {img:"55_xiao_ii.png", name:"魈二代"},
-  {img:"56_deer_head.png", name:"鹿头"},
-  {img:"57_yellow_king.png", name:"黄衣之主"}
+  {img:"01_doro.png", name:"doro", model:"doro"},
+  {img:"02_RUPA.png", name:"RUPA", model:null},
+  {img:"03_nai_lin.png", name:"乃琳", model:null},
+  {img:"04_jingqin_renna.png", name:"井芹仁菜", model:null},
+  {img:"05_chou_yuan.png", name:"仇远", model:null},
+  {img:"06_dongli_cat.png", name:"动力小猫", model:null},
+  {img:"07_qian_xiao.png", name:"千咲", model:null},
+  {img:"08_ka_ti.png", name:"卡提", model:null},
+  {img:"09_klee.png", name:"可莉", model:"可莉"},
+  {img:"10_gardener.png", name:"园丁", model:null},
+  {img:"11_su_xin.png", name:"塑心", model:null},
+  {img:"12_dashachun.png", name:"大傻椿", model:null},
+  {img:"13_dayuexia.png", name:"大月下", model:null},
+  {img:"14_zi_yin.png", name:"子音", model:null},
+  {img:"15_nie_xi.png", name:"孽蜥", model:null},
+  {img:"16_night_watch.png", name:"守夜人", model:null},
+  {img:"17_shorekeeper.png", name:"守岸人", model:null},
+  {img:"18_anhe_mou.png", name:"安和昴", model:null},
+  {img:"19_little_girl.png", name:"小女孩", model:null},
+  {img:"20_panda_haohao.png", name:"小熊猫昊昊", model:null},
+  {img:"21_floro.png", name:"弗洛洛", model:null},
+  {img:"22_gui_zhong.png", name:"归终", model:null},
+  {img:"23_dino_huaying.png", name:"恐龙流萤", model:null},
+  {img:"24_you_mi.png", name:"悠米", model:null},
+  {img:"25_fool_gold.png", name:"愚人金", model:null},
+  {img:"26_xingjian_ya.png", name:"星见雅", model:null},
+  {img:"27_kazuha.png", name:"枫原万叶", model:"枫原万叶"},
+  {img:"28_dream_witch.png", name:"梦之女巫", model:null},
+  {img:"29_haragi_momoka.png", name:"河原木桃香", model:null},
+  {img:"30_huaying.png", name:"流萤", model:"流萤"},
+  {img:"31_ebizuka_sat.png", name:"海老塚智", model:null},
+  {img:"32_wendy.png", name:"温蒂", model:null},
+  {img:"33_venti.png", name:"温迪", model:"温迪"},
+  {img:"34_mansui.png", name:"满穗", model:null},
+  {img:"35_elysia.png", name:"爱莉希雅", model:"爱莉希雅"},
+  {img:"36_cleita.png", name:"珂莱塔", model:null},
+  {img:"37_kokomi.png", name:"珊瑚宫心海", model:"珊瑚宫心海"},
+  {img:"38_pidan.png", name:"皮蛋", model:null},
+  {img:"39_zi_min.png", name:"籽岷", model:null},
+  {img:"40_pink_angel.png", name:"粉红天使", model:null},
+  {img:"41_classic_kb.png", name:"经典小键盘", model:null},
+  {img:"42_oyama_mahiro.png", name:"绪山真寻", model:null},
+  {img:"43_luo_xiaohei.png", name:"罗小黑", model:null},
+  {img:"44_aiseya.png", name:"艾瑟雅", model:null},
+  {img:"45_mo_ning.png", name:"莫宁", model:null},
+  {img:"46_phoebe.png", name:"菲比", model:null},
+  {img:"47_executor.png", name:"送葬人", model:null},
+  {img:"48_xiaoyao_sanren.png", name:"逍遥散人", model:null},
+  {img:"49_bangboo.png", name:"邦布", model:null},
+  {img:"50_silver_wolf.png", name:"银狼", model:"银狼"},
+  {img:"51_jingliu.png", name:"镜流", model:"镜流"},
+  {img:"52_jingliu_gamepad.png", name:"镜流(手柄)", model:null},
+  {img:"53_rongmei.png", name:"阮梅", model:"阮梅"},
+  {img:"54_rongmei_gamepad.png", name:"阮梅(手柄)", model:null},
+  {img:"55_xiao_ii.png", name:"魈二代", model:null},
+  {img:"56_deer_head.png", name:"鹿头", model:null},
+  {img:"57_yellow_king.png", name:"黄衣之主", model:null}
 ];
 
 const grid = document.getElementById('grid');
+let pixiApp = null;
+let currentModel = null;
+let typingTimer = null;
+
 models.forEach((m) => {
   const card = document.createElement('div');
   card.className = 'card';
@@ -128,12 +138,81 @@ models.forEach((m) => {
 
 function openModal(m) {
   document.getElementById('modalTitle').textContent = m.name;
-  document.getElementById('modalImg').src = 'gallery/' + m.img;
-  document.getElementById('modal').classList.add('active');
+  const modal = document.getElementById('modal');
+  const img = document.getElementById('modalImg');
+  const action = document.getElementById('modalAction');
+  const canvas = document.getElementById('modalCanvas');
+
+  modal.classList.add('active');
+
+  if (m.model) {
+    // Try Live2D
+    img.style.display = 'none';
+    action.style.display = 'none';
+    canvas.style.display = 'block';
+    setTimeout(async () => {
+      try {
+        if (!pixiApp) {
+          pixiApp = new PIXI.Application({
+            view: canvas,
+            width: window.innerWidth,
+            height: window.innerHeight,
+            backgroundAlpha: 0,
+            antialias: true,
+            resizeTo: window
+          });
+        }
+        const model = await PIXI.live2d.Live2DModel.from('models/' + m.model + '/cat.model3.json');
+        const scale = Math.min(window.innerWidth / model.width, window.innerHeight / model.height) * 0.6;
+        model.scale.set(scale);
+        model.anchor.set(0.5, 0.5);
+        pixiApp.stage.addChild(model);
+        currentModel = model;
+        startTyping();
+      } catch(e) {
+        console.error('Live2D failed:', e);
+        showImagePreview(m);
+      }
+    }, 200);
+  } else {
+    showImagePreview(m);
+  }
+}
+
+function showImagePreview(m) {
+  const img = document.getElementById('modalImg');
+  const action = document.getElementById('modalAction');
+  document.getElementById('modalCanvas').style.display = 'none';
+  img.src = 'gallery/' + m.img;
+  img.style.display = 'block';
+  action.style.display = 'block';
+}
+
+function startTyping() {
+  stopTyping();
+  typingTimer = setInterval(() => {
+    if (!currentModel) return;
+    try {
+      const core = currentModel.internalModel.coreModel;
+      const lh = Math.random() > 0.5 ? 1 : 0;
+      const rh = Math.random() > 0.5 ? 1 : 0;
+      core.setParameterValueById('CatParamLeftHandDown', lh);
+      core.setParameterValueById('CatParamRightHandDown', rh);
+    } catch(e) {}
+  }, 250);
+}
+
+function stopTyping() {
+  if (typingTimer) { clearInterval(typingTimer); typingTimer = null; }
 }
 
 function closeModal() {
   document.getElementById('modal').classList.remove('active');
+  stopTyping();
+  if (currentModel && pixiApp) {
+    pixiApp.stage.removeChild(currentModel);
+    currentModel = null;
+  }
 }
 </script>
 </body>
