@@ -3,90 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BongoCat 皮肤在线演示</title>
+<title>BongoCat 皮肤预览 — 57款精选</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f0f1a;color:#fff;overflow:hidden;height:100vh}
-#app{width:100vw;height:100vh}
-.overlay{position:fixed;top:20px;left:50%;transform:translateX(-50%);text-align:center;z-index:10}
-.overlay h1{font-size:1.5em;background:linear-gradient(90deg,#e94560,#ff6b9d);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.overlay p{color:#888;font-size:0.9em;margin-top:5px}
-.controls{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
-.controls button{background:#1a1a2e;border:1px solid #e94560;color:#fff;padding:8px 20px;border-radius:20px;cursor:pointer;font-size:0.9em;transition:all .2s}
-.controls button:hover{background:#e94560}
-.back{position:fixed;top:20px;left:20px;z-index:10}
-.back a{color:#888;text-decoration:none;font-size:0.9em}
-.back a:hover{color:#e94560}
+body{font-family:-apple-system,'Microsoft YaHei',sans-serif;background:#0f0f1a;color:#fff;min-height:100vh}
+.hero{text-align:center;padding:50px 20px 30px;background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)}
+.hero h1{font-size:2.2em;margin-bottom:8px;background:linear-gradient(90deg,#e94560,#ff6b9d);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#888;font-size:1em}
+.badge{display:inline-block;background:#e94560;color:#fff;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-top:10px}
+.cta{text-align:center;padding:25px}
+.cta a{display:inline-block;background:#e94560;color:#fff;padding:12px 32px;border-radius:25px;text-decoration:none;font-weight:600;margin:5px;transition:transform .2s}
+.cta a:hover{transform:scale(1.05)}
+.cta a.ghost{background:transparent;border:1px solid #e94560}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;padding:30px;max-width:1200px;margin:0 auto}
+.card{background:#1a1a2e;border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 6px 25px rgba(233,69,96,.25)}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.name{padding:10px;text-align:center;font-size:0.85em;font-weight:500}
+.back{position:fixed;top:15px;left:15px;z-index:10}
+.back a{color:#888;text-decoration:none;font-size:0.85em}
 </style>
 </head>
 <body>
 <div class="back"><a href="../shop.html">← 返回商店</a></div>
-<div class="overlay">
-  <h1>BongoCat 在线演示</h1>
-  <p>移动鼠标与角色互动 · 点击切换表情</p>
+<div class="hero">
+  <h1>BongoCat 精选皮肤包</h1>
+  <p>57款热门二次元桌宠 · 实时同步键盘鼠标操作</p>
+  <div class="badge">57 款皮肤</div>
 </div>
-<div id="app"></div>
-<div class="controls">
-  <button onclick="nextModel()">切换模型</button>
-  <button onclick="window.open('https://github.com/lilyco-42/character-theme-kit/releases','_blank')">下载57款皮肤包</button>
+<div class="cta">
+  <a href="https://github.com/ayangweb/BongoCat/releases" target="_blank">① 下载BongoCat主程序</a>
+  <a href="https://github.com/lilyco-42/character-theme-kit/releases/latest" target="_blank">② 下载皮肤包(加密)</a>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.10/dist/browser/pixi.min.js"></script>
-<script src="lib/live2dcubismcore.min.js"></script>
-<script src="lib/cubism4.min.js"></script>
+<div class="grid" id="grid"></div>
 <script>
-const app = new PIXI.Application({
-  view: document.getElementById('app'),
-  width: window.innerWidth,
-  height: window.innerHeight,
-  autoStart: true,
-  backgroundAlpha: 0,
-  resizeTo: window
-});
-
-let currentModel = null;
 const models = [
-  { name: 'doro', path: 'models/doro/cat.model3.json' }
+  ["doro","doro"],["RUPA","RUPA"],["乃琳","乃琳"],["井芹仁菜","井芹仁菜"],
+  ["仇远","仇远"],["动力小猫","动力小猫"],["千咲","千咲"],["卡提","卡提"],
+  ["可莉","可莉"],["园丁","园丁"],["塑心","塑心"],["大傻椿","大傻椿"],
+  ["大月下","大月下"],["子音","子音"],["孽蜥","孽蜥"],["守夜人","守夜人"],
+  ["守岸人","守岸人"],["安和昴","安和昴"],["小女孩","小女孩"],["小熊猫昊昊","小熊猫昊昊"],
+  ["弗洛洛","弗洛洛"],["归终","归终"],["恐龙流萤","恐龙流萤"],["悠米","悠米"],
+  ["愚人金","愚人金"],["星见雅","星见雅"],["枫原万叶","枫原万叶"],["梦之女巫","梦之女巫"],
+  ["河原木桃香","河原木桃香"],["流萤","流萤"],["海老塚智","海老塚智"],["温蒂","温蒂"],
+  ["温迪","温迪"],["满穗","满穗"],["爱莉希雅","爱莉希雅"],["珂莱塔","珂莱塔"],
+  ["珊瑚宫心海","珊瑚宫心海"],["皮蛋","皮蛋"],["籽岷","籽岷"],["粉红天使","粉红天使"],
+  ["经典小键盘","经典小键盘"],["绪山真寻","绪山真寻"],["罗小黑","罗小黑"],["艾瑟雅","艾瑟雅"],
+  ["莫宁","莫宁"],["菲比","菲比"],["送葬人","送葬人"],["逍遥散人","逍遥散人"],
+  ["邦布","邦布"],["银狼","银狼"],["镜流","镜流"],["阮梅","阮梅"],
+  ["魈二代","魈二代"],["鹿头","鹿头"],["黄衣之主","黄衣之主"]
 ];
-let modelIndex = 0;
-
-async function loadModel(path) {
-  try {
-    if (currentModel) app.stage.removeChild(currentModel);
-    const model = await PIXI.live2d.Live2DModel.from(path);
-    const scale = Math.min(app.screen.width / model.width, app.screen.height / model.height) * 0.8;
-    model.scale.set(scale);
-    model.x = app.screen.width / 2;
-    model.y = app.screen.height / 2;
-    model.anchor.set(0.5, 0.5);
-    app.stage.addChild(model);
-    currentModel = model;
-    // Click to trigger expression
-    model.on('pointertap', () => {
-      const exps = model.internalModel.settings.expressions;
-      if (exps && exps.length) {
-        const exp = exps[Math.floor(Math.random() * exps.length)];
-        model.internalModel.motionManager.expressionManager?.setExpression(exp.name);
-      }
-    });
-    // Mouse tracking
-    app.stage.on('pointermove', (e) => {
-      if (currentModel) {
-        const pos = e.data.global;
-        currentModel.focus(pos.x, pos.y);
-      }
-    });
-  } catch(e) {
-    console.error('模型加载失败:', e);
-  }
-}
-
-function nextModel() {
-  modelIndex = (modelIndex + 1) % models.length;
-  loadModel(models[modelIndex].path);
-}
-
-loadModel(models[0].path);
+const grid = document.getElementById('grid');
+models.forEach((m,i) => {
+  const num = String(i+1).padStart(2,'0');
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `<img src="gallery/${num}_${m[0].replace(/[\s·]/g,'_')}.png" loading="lazy" onerror="this.style.background='#1a1a2e'"><div class="name">${m[1]}</div>`;
+  grid.appendChild(card);
+});
 </script>
 </body>
 </html>
