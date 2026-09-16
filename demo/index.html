@@ -134,18 +134,19 @@ function openModal(m) {
   document.getElementById('modalTitle').textContent = m.name;
   modal.classList.add('active');
 
-  if (!pixiApp) {
-    pixiApp = new PIXI.Application({
-      view: document.getElementById('modalCanvas'),
-      width: window.innerWidth,
-      height: window.innerHeight,
-      backgroundAlpha: 0,
-      antialias: true,
-      resizeTo: window
-    });
-  }
-
-  loadModel(m.model);
+  setTimeout(async () => {
+    if (!pixiApp) {
+      pixiApp = new PIXI.Application({
+        view: document.getElementById('modalCanvas'),
+        width: window.innerWidth,
+        height: window.innerHeight,
+        backgroundAlpha: 0,
+        antialias: true,
+        resizeTo: window
+      });
+    }
+    await loadModel(m.model);
+  }, 100);
 }
 
 function closeModal() {
@@ -157,7 +158,10 @@ function closeModal() {
 }
 
 async function loadModel(modelDir) {
-  if (!modelDir) return;
+  if (!modelDir) {
+    document.getElementById('modalTitle').textContent += ' (静态预览)';
+    return;
+  }
   try {
     if (currentModel) { pixiApp.stage.removeChild(currentModel); currentModel = null; }
     const model = await PIXI.live2d.Live2DModel.from('models/' + modelDir + '/cat.model3.json');
