@@ -3,171 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Character Theme Kit - 101角色桌面主题素材包</title>
+<title>Character Theme Kit — 101热门动漫角色桌面素材包</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Segoe UI',system-ui,sans-serif; background:#0a0a0f; color:#e0e0e0; line-height:1.6; }
-.hero { text-align:center; padding:80px 20px; background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%); }
-.hero h1 { font-size:3em; background:linear-gradient(90deg,#e94560,#ff6b9d,#c44dff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:16px; }
-.hero p { font-size:1.2em; color:#aaa; max-width:600px; margin:0 auto 30px; }
-.badges { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-.badge { background:rgba(233,69,96,.15); border:1px solid #e94560; color:#e94560; padding:6px 16px; border-radius:20px; font-size:.9em; }
-.pricing { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; max-width:1000px; margin:60px auto; padding:0 20px; }
-.card { background:#1a1a2e; border-radius:16px; padding:32px; border:1px solid #333; transition:transform .2s; }
-.card:hover { transform:translateY(-4px); border-color:#e94560; }
-.card h3 { font-size:1.3em; margin-bottom:8px; }
-.price { font-size:2.5em; font-weight:bold; color:#e94560; margin:12px 0; }
-.price small { font-size:.4em; color:#888; font-weight:normal; }
-.features { list-style:none; margin:20px 0; }
-.features li { padding:6px 0; color:#bbb; }
-.features li::before { content:"✓ "; color:#4ecca3; font-weight:bold; }
-.btn { display:block; text-align:center; background:linear-gradient(90deg,#e94560,#c44dff); color:#fff; padding:14px; border-radius:10px; text-decoration:none; font-weight:bold; margin-top:16px; }
-.section { max-width:1000px; margin:60px auto; padding:0 20px; }
-.section h2 { font-size:2em; margin-bottom:24px; text-align:center; }
-.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:16px; }
-.char { background:#1a1a2e; border-radius:12px; padding:16px; text-align:center; border:1px solid #2a2a3e; }
-.char img { width:100%; border-radius:8px; margin-bottom:8px; background:#fff; }
-.char .name { font-weight:bold; font-size:.9em; }
-.char .series { font-size:.75em; color:#888; }
-.sponsor { text-align:center; padding:60px 20px; background:#111; }
-.sponsor .qr-row { display:flex; gap:40px; justify-content:center; flex-wrap:wrap; margin:30px 0; }
-.sponsor .qr-item { text-align:center; }
-.sponsor .qr-item img { width:220px; border-radius:12px; border:2px solid #333; background:#fff; }
-.sponsor .qr-item .label { margin-top:10px; font-weight:bold; color:#4ecca3; }
-.sponsor p { color:#888; max-width:500px; margin:0 auto; }
-.notice { max-width:1000px; margin:20px auto; padding:16px 20px; background:#1a1a2e; border-left:4px solid #e94560; border-radius:8px; color:#aaa; font-size:.9em; }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--card:#15151f;--border:#252535;--accent:#e94560;--accent2:#7c3aed;--text:#e8e8f0;--dim:#8888a0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('characters/gojo/wallpaper_4k.png') center/cover;opacity:.35;filter:blur(2px) saturate(1.2)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,15,.6) 0%,rgba(10,10,15,.85) 100%)}
+.hero-content{position:relative;z-index:2;max-width:800px;padding:40px 20px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;letter-spacing:-.02s;background:linear-gradient(135deg,#fff 0%,#e94560 50%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px}
+.hero .tagline{font-size:clamp(1rem,2vw,1.3rem);color:#ccc;margin-bottom:30px}
+.hero .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);padding:8px 18px;border-radius:30px;font-size:.85em;color:#ddd}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#666;animation:bounce 2s infinite;font-size:1.5rem}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+section{max-width:1100px;margin:0 auto;padding:80px 24px}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);text-align:center;margin-bottom:50px;font-weight:800}
+h2 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.plan{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px 32px;position:relative;transition:all .3s}
+.plan:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 20px 60px rgba(233,69,96,.15)}
+.plan.featured{border-color:var(--accent);background:linear-gradient(180deg,rgba(233,69,96,.08),var(--card))}
+.plan .popular{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--accent),var(--accent2));padding:4px 20px;border-radius:20px;font-size:.75em;font-weight:700;white-space:nowrap}
+.plan h3{font-size:1.2em;margin-bottom:4px}
+.plan .price{font-size:3em;font-weight:900;margin:12px 0;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.plan .price small{font-size:.35em;color:var(--dim);-webkit-text-fill-color:var(--dim)}
+.plan ul{list-style:none;margin:24px 0}
+.plan li{padding:8px 0;color:#bbb;font-size:.95em}
+.plan li::before{content:"✓";color:#4ecca3;font-weight:700;margin-right:8px}
+.plan li.no::before{content:"—";color:#555}
+.btn{display:block;text-align:center;padding:16px;border-radius:12px;text-decoration:none;font-weight:700;transition:all .2s;font-size:1em}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff}
+.btn-primary:hover{box-shadow:0 10px 30px rgba(233,69,96,.4)}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:#ccc}
+.btn-ghost:hover{border-color:var(--accent);color:#fff}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.wall{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/10;background:#111}
+.wall img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.wall:hover img{transform:scale(1.05)}
+.wall .label{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-weight:700;font-size:1.1em}
+.wall .label small{display:block;font-weight:400;color:#999;font-size:.8em}
+.chars{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px}
+.chip{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;font-size:.85em;transition:all .2s}
+.chip:hover{border-color:var(--accent);background:rgba(233,69,96,.1)}
+.sponsor-box{text-align:center}
+.qr-row{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin:40px 0}
+.qr{text-align:center}
+.qr img{width:200px;border-radius:16px;border:2px solid var(--border);background:#fff;transition:transform .2s}
+.qr:hover{transform:scale(1.05)}
+.qr .lbl{margin-top:12px;font-weight:700;font-size:1.05em}
+.notice{max-width:700px;margin:40px auto;padding:20px;background:rgba(233,69,96,.08);border:1px solid rgba(233,69,96,.3);border-radius:12px;font-size:.85em;color:#aaa;text-align:center}
+footer{text-align:center;padding:40px;color:#555;font-size:.85em;border-top:1px solid var(--border)}
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <h1>Character Theme Kit</h1>
-  <p>101 个热门动漫角色 × 桌面主题素材包<br>鼠标指针 · 壁纸 · UI配色 · 按钮组件</p>
-  <div class="badges">
-    <span class="badge">101 角色</span>
-    <span class="badge">303 指针</span>
-    <span class="badge">101 壁纸</span>
-    <span class="badge">101 套 UI CSS</span>
-    <span class="badge">43 张官方人设图</span>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Character Theme Kit</h1>
+    <p class="tagline">101 个热门动漫角色 · 303 个鼠标指针 · 4K 壁纸 · UI 配色<br>一键换桌面，让你的电脑变成你的角色</p>
+    <div class="badges">
+      <span class="badge">101 角色</span>
+      <span class="badge">303 .cur 指针</span>
+      <span class="badge">101 套 UI CSS</span>
+      <span class="badge">4K 壁纸</span>
+      <span class="badge">同人/粉丝向</span>
+    </div>
   </div>
+  <div class="scroll-hint">▾</div>
 </div>
 
-<div class="notice">
-  <strong>⚠️ 版权说明：</strong>本素材包为<strong>同人/粉丝向</strong>创作，角色版权归原作者及发行方所有。
-  购买后仅限个人使用，禁止二次转售或商用。官方人设图仅供配色参考。
-</div>
-
-<div class="pricing">
-  <div class="card">
-    <h3>免费版</h3>
-    <div class="price">¥0<small>/永久</small></div>
-    <ul class="features">
-      <li>GitHub 仓库免费下载</li>
-      <li>14个 IP 合集 cursor 包</li>
-      <li>所有角色配色 token</li>
-      <li>MIT 协议开源</li>
-    </ul>
-    <a class="btn" href="https://github.com/lilyco-42/character-theme-kit">GitHub 下载</a>
+<section>
+  <h2>选择你的<span>套餐</span></h2>
+  <div class="pricing">
+    <div class="plan">
+      <h3>免费版</h3>
+      <div class="price">¥0<small> /永久</small></div>
+      <ul>
+        <li>GitHub 仓库免费下载</li>
+        <li>14 个 IP cursor 合集包</li>
+        <li>所有角色配色 token</li>
+        <li>MIT 协议开源</li>
+        <li class="no">无 4K 壁纸</li>
+        <li class="no">无 UI 组件</li>
+      </ul>
+      <a class="btn btn-ghost" href="https://github.com/lilyco-42/character-theme-kit">GitHub 下载</a>
+    </div>
+    <div class="plan featured">
+      <div class="popular">★ 最受欢迎</div>
+      <h3>完整版</h3>
+      <div class="price">¥39<small> /永久</small></div>
+      <ul>
+        <li>101 角色全部素材</li>
+        <li>303 个 .cur 鼠标指针</li>
+        <li>4K 精美角色壁纸</li>
+        <li>101 套 UI CSS 主题</li>
+        <li>徽章 SVG + 字体主题</li>
+        <li>终身免费更新</li>
+      </ul>
+      <a class="btn btn-primary" href="#buy">扫码购买完整版</a>
+    </div>
+    <div class="plan">
+      <h3>定制版</h3>
+      <div class="price">¥68<small> /次</small></div>
+      <ul>
+        <li>自定义角色 cursor</li>
+        <li>专属配色方案</li>
+        <li>前端 UI 主题包</li>
+        <li>24 小时交付</li>
+        <li>支持任意角色/OC</li>
+      </ul>
+      <a class="btn btn-ghost" href="mailto:lily@lain42.top">联系定制</a>
+    </div>
   </div>
-  <div class="card" style="border-color:#e94560">
-    <h3>★ 完整版</h3>
-    <div class="price">¥39<small>/永久</small></div>
-    <ul class="features">
-      <li>101 角色全部素材</li>
-      <li>303 个 .cur 鼠标指针</li>
-      <li>101 张 4K 壁纸</li>
-      <li>UI 组件 CSS + 预览</li>
-      <li>27 张官方人设图参考集</li>
-      <li>终身更新</li>
-    </ul>
-    <a class="btn" href="#sponsor">微信扫码购买</a>
-  </div>
-  <div class="card">
-    <h3>定制版</h3>
-    <div class="price">¥68<small>/次</small></div>
-    <ul class="features">
-      <li>自定义角色 cursor</li>
-      <li>配色方案定制</li>
-      <li>前端 UI 主题包</li>
-      <li>24小时内交付</li>
-    </ul>
-    <a class="btn" href="mailto:lily@lain42.top">联系定制</a>
-  </div>
-</div>
+</section>
 
-<div class="section">
-  <h2>角色展示（已收录官方人设图）</h2>
-  <div class="grid" id="charGrid"></div>
-</div>
+<section>
+  <h2>4K 壁纸<span>预览</span></h2>
+  <div class="gallery">
+    <div class="wall"><img src="characters/levi/wallpaper_4k.png" alt="利威尔"><div class="label">利威尔·阿克曼<small>进击的巨人 · 4K 战斗壁纸</small></div></div>
+    <div class="wall"><img src="characters/luffy/wallpaper_4k.png" alt="路飞"><div class="label">蒙奇·D·路飞<small>海贼王 · Gear5 太阳神尼卡</small></div></div>
+    <div class="wall"><img src="characters/mikasa/wallpaper_4k.png" alt="三笠"><div class="label">三笠·阿克曼<small>进击的巨人 · 雨天红围巾</small></div></div>
+    <div class="wall"><img src="characters/sasuke/wallpaper_4k.png" alt="佐助"><div class="label">宇智波佐助<small>火影忍者 · 日落倒影</small></div></div>
+    <div class="wall"><img src="characters/gojo/wallpaper_4k.png" alt="五条悟"><div class="label">五条悟<small>咒术回战 · 苍蓝特效</small></div></div>
+    <div class="wall"><img src="characters/asuka/wallpaper_4k.png" alt="明日香"><div class="label">式波·明日香<small>EVA · 红色驾驶服</small></div></div>
+  </div>
+</section>
 
-<div class="sponsor" id="sponsor">
-  <h2>支持我们 🐱</h2>
-  <p>购买完整版后请扫码付款，备注你的 GitHub 用户名，我会在24小时内把下载链接发给你。<br>小白猫会很开心～</p>
+<section>
+  <h2>已收录<span>角色</span></h2>
+  <div class="chars" id="charGrid"></div>
+</section>
+
+<section id="buy" class="sponsor-box">
+  <h2>购买<span>完整版</span></h2>
+  <p style="color:var(--dim);max-width:500px;margin:0 auto 20px">扫码付款 ¥39，备注 GitHub 用户名，24 小时内发送下载链接</p>
   <div class="qr-row">
-    <div class="qr-item">
+    <div class="qr">
       <img src="assets/wechat_pay.png" alt="微信支付">
-      <div class="label">💚 微信支付</div>
+      <div class="lbl">微信支付 ¥39</div>
     </div>
-    <div class="qr-item">
+    <div class="qr">
       <img src="assets/alipay.png" alt="支付宝">
-      <div class="label">💙 支付宝</div>
+      <div class="lbl">支付宝 ¥39</div>
     </div>
   </div>
-</div>
+  <div class="notice">
+    <strong>版权说明：</strong>本素材包为同人/粉丝向创作，角色版权归原作者及发行方所有。<br>
+    购买后仅限个人使用，禁止二次转售或商用。
+  </div>
+</section>
+
+<footer>
+  Character Theme Kit · GitHub: lilyco-42/character-theme-kit · 同人粉丝向作品
+</footer>
 
 <script>
-const chars = [
-  {name:"佐助",series:"火影忍者",img:"characters/sasuke/official.png"},
-  {name:"鸣人",series:"火影忍者",img:"characters/naruto/official.png"},
-  {name:"路飞",series:"海贼王",img:"characters/luffy/official_v2.png"},
-  {name:"索隆",series:"海贼王",img:"characters/zoro/official.png"},
-  {name:"山治",series:"海贼王",img:"characters/sanji/official_v2.png"},
-  {name:"女帝",series:"海贼王",img:"characters/hancock/official.png"},
-  {name:"罗宾",series:"海贼王",img:"characters/robin/official.png"},
-  {name:"五条悟",series:"咒术回战",img:"characters/gojo/official_v4.png"},
-  {name:"虎杖悠仁",series:"咒术回战",img:"characters/itadori/official.png"},
-  {name:"伏黑惠",series:"咒术回战",img:"characters/fushiguro/official.png"},
-  {name:"钉崎野蔷薇",series:"咒术回战",img:"characters/nobara/official.png"},
-  {name:"炭治郎",series:"鬼灭之刃",img:"characters/tanjiro/official.png"},
-  {name:"祢豆子",series:"鬼灭之刃",img:"characters/nezuko/official_v2.png"},
-  {name:"富冈义勇",series:"鬼灭之刃",img:"characters/tomioka/official.png"},
-  {name:"三笠",series:"进击的巨人",img:"characters/mikasa/official.png"},
-  {name:"艾伦",series:"进击的巨人",img:"characters/eren/official_v2.png"},
-  {name:"利威尔",series:"进击的巨人",img:"characters/levi/official_v2.png"},
-  {name:"阿尔敏",series:"进击的巨人",img:"characters/armin/official.png"},
-  {name:"明日香",series:"EVA",img:"characters/asuka/official.png"},
-  {name:"初音未来",series:"Vocaloid",img:"characters/miku/official.png"},
-  {name:"阿尼亚",series:"间谍过家家",img:"characters/anya/official.png"},
-  {name:"电次",series:"电锯人",img:"characters/denji/official.png"},
-  {name:"早川秋",series:"电锯人",img:"characters/aki/official.png"},
-  {name:"玛奇玛",series:"电锯人",img:"characters/makima/official.png"},
-  {name:"波奇塔",series:"电锯人",img:"characters/pochita/official.png"},
-  {name:"星野爱",series:"我推的孩子",img:"characters/aio/official.png"},
-  {name:"阿波连",series:"胆大党",img:"characters/okarun/official.png"},
-  {name:"卡卡西",series:"火影忍者",img:"characters/kakashi/official.png"},
-  {name:"宇智波鼬",series:"火影忍者",img:"characters/itachi/official.png"},
-  {name:"孙悟空",series:"龙珠",img:"characters/goku/official.png"},
-  {name:"2B",series:"尼尔机械纪元",img:"characters/2b/official.png"},
-  {name:"大力",series:"电锯人",img:"characters/power/official.png"},
-  {name:"约尔",series:"间谍过家家",img:"characters/yor/official.png"},
-  {name:"芙莉莲",series:"葬送的芙莉莲",img:"characters/frieren/official.png"},
-  {name:"胡桃",series:"原神",img:"characters/hutao/official.png"},
-  {name:"银时",series:"银魂",img:"characters/gintoki/official.png"},
-  {name:"宿傩",series:"咒术回战",img:"characters/sukuna/official.png"},
-  {name:"善逸",series:"鬼灭之刃",img:"characters/zenitsu/official.png"},
-  {name:"钟离",series:"原神",img:"characters/zhongli/official.png"},
-  {name:"贝吉塔",series:"龙珠",img:"characters/vegeta/official.png"},
-  {name:"雷姆",series:"Re从零开始",img:"characters/rem/official.png"},
-  {name:"亚丝娜",series:"刀剑神域",img:"characters/asuna/official.png"},
-  {name:"远坂凛",series:"Fate",img:"characters/rin/official.png"},
-];
+const chars=["佐助","鸣人","卡卡西","鼬","路飞","索隆","山治","女帝","罗宾","五条悟","虎杖","伏黑","钉崎","宿傩","炭治郎","祢豆子","富冈","善逸","蜜璃","三笠","艾伦","利威尔","阿尔敏","明日香","初音","阿尼亚","约尔","电次","早川秋","玛奇玛","波奇塔","大力","星野爱","阿波连","悟空","贝吉塔","2B","芙莉莲","胡桃","钟离","甘雨","银时","雷姆","亚丝娜","Saber","凛","格斯","利姆露","艾露莎","奇犽","太宰","金木研"];
 const grid=document.getElementById("charGrid");
-chars.forEach(c=>{
-  const d=document.createElement("div");
-  d.className="char";
-  d.innerHTML=`<img src="${c.img}" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22><rect width=%22140%22 height=%22140%22 fill=%22%23222%22/></svg>'"><div class="name">${c.name}</div><div class="series">${c.series}</div>`;
-  grid.appendChild(d);
-});
+chars.forEach(c=>{const d=document.createElement("div");d.className="chip";d.textContent=c;grid.appendChild(d);});
 </script>
 </body>
 </html>
