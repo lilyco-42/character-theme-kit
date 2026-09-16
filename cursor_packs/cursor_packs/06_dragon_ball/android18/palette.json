@@ -1,0 +1,12 @@
+{
+  "id": "android18",
+  "name": "18号",
+  "series": "龙珠",
+  "vibe": "人造人·金",
+  "palette": {
+    "primary": "#FBBF24",
+    "secondary": "#78350F",
+    "accent": "#60A5FA",
+    "electric": "#FDE68A"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "deidara",
+  "name": "迪达拉",
+  "series": "火影忍者",
+  "vibe": "爆炸·艺术",
+  "palette": {
+    "primary": "#FBBF24",
+    "secondary": "#78350F",
+    "accent": "#EF4444",
+    "electric": "#FDE68A"
+  }
+}

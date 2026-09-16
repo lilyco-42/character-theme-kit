@@ -1,0 +1,12 @@
+{
+  "id": "trunks",
+  "name": "特兰克斯",
+  "series": "龙珠",
+  "vibe": "未来·剑",
+  "palette": {
+    "primary": "#7C3AED",
+    "secondary": "#2E1065",
+    "accent": "#F97316",
+    "electric": "#C4B5FD"
+  }
+}

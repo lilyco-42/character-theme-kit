@@ -1,0 +1,12 @@
+{
+  "id": "chopper",
+  "name": "乔巴",
+  "series": "海贼王",
+  "vibe": "棉花糖·粉",
+  "palette": {
+    "primary": "#F472B6",
+    "secondary": "#831843",
+    "accent": "#FDE68A",
+    "electric": "#FFFFFF"
+  }
+}

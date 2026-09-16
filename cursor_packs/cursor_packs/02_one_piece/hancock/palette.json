@@ -1,0 +1,12 @@
+{
+  "id": "hancock",
+  "name": "汉库克",
+  "series": "海贼王",
+  "vibe": "海贼女帝·蛇姬",
+  "palette": {
+    "primary": "#EC4899",
+    "secondary": "#500724",
+    "accent": "#FBBF24",
+    "electric": "#FBCFE8"
+  }
+}

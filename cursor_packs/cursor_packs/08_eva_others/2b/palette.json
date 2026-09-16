@@ -1,0 +1,12 @@
+{
+  "id": "2b",
+  "name": "尤尔哈2B",
+  "series": "尼尔机械纪元",
+  "vibe": "寄叶·黑银",
+  "palette": {
+    "primary": "#374151",
+    "secondary": "#030712",
+    "accent": "#9CA3AF",
+    "electric": "#E5E7EB"
+  }
+}

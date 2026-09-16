@@ -1,0 +1,12 @@
+{
+  "id": "armin",
+  "name": "阿尔敏",
+  "series": "进击的巨人",
+  "vibe": "光芒·金发",
+  "palette": {
+    "primary": "#FDE68A",
+    "secondary": "#78350F",
+    "accent": "#FBBF24",
+    "electric": "#FEF3C7"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "tanjiro",
+  "name": "灶门炭治郎",
+  "series": "鬼灭之刃",
+  "vibe": "水之呼吸·绿黑格",
+  "palette": {
+    "primary": "#16A34A",
+    "secondary": "#052E16",
+    "accent": "#EF4444",
+    "electric": "#94A3B8"
+  }
+}

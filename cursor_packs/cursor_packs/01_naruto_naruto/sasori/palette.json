@@ -1,0 +1,12 @@
+{
+  "id": "sasori",
+  "name": "蝎",
+  "series": "火影忍者",
+  "vibe": "傀儡·赤砂",
+  "palette": {
+    "primary": "#F472B6",
+    "secondary": "#831843",
+    "accent": "#F9A8D4",
+    "electric": "#FCE7F3"
+  }
+}

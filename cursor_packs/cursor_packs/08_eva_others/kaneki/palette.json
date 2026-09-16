@@ -1,0 +1,12 @@
+{
+  "id": "kaneki",
+  "name": "金木研",
+  "series": "东京喰种",
+  "vibe": "喰种·白惨",
+  "palette": {
+    "primary": "#78716C",
+    "secondary": "#0C0A09",
+    "accent": "#DC2626",
+    "electric": "#D6D3D1"
+  }
+}

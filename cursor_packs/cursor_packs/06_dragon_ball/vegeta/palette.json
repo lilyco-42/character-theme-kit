@@ -1,0 +1,12 @@
+{
+  "id": "vegeta",
+  "name": "贝吉塔",
+  "series": "龙珠",
+  "vibe": "王子·战紫",
+  "palette": {
+    "primary": "#7C3AED",
+    "secondary": "#2E1065",
+    "accent": "#FACC15",
+    "electric": "#C4B5FD"
+  }
+}

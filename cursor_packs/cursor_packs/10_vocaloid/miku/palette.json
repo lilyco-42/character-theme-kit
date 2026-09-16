@@ -1,0 +1,12 @@
+{
+  "id": "miku",
+  "name": "初音未来",
+  "series": "Vocaloid",
+  "vibe": "公式·葱绿",
+  "palette": {
+    "primary": "#67E8F9",
+    "secondary": "#164E63",
+    "accent": "#EC4899",
+    "electric": "#A5F3FC"
+  }
+}

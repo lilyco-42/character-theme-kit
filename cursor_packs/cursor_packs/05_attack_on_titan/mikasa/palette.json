@@ -1,0 +1,12 @@
+{
+  "id": "mikasa",
+  "name": "三笠",
+  "series": "进击的巨人",
+  "vibe": "红围·阿克曼",
+  "palette": {
+    "primary": "#F59E0B",
+    "secondary": "#451A03",
+    "accent": "#DC2626",
+    "electric": "#FCD34D"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "hange",
+  "name": "韩吉",
+  "series": "进击的巨人",
+  "vibe": "分队长·研究",
+  "palette": {
+    "primary": "#FBBF24",
+    "secondary": "#78350F",
+    "accent": "#10B981",
+    "electric": "#FDE68A"
+  }
+}

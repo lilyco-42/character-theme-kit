@@ -1,0 +1,12 @@
+{
+  "id": "tatsumaki",
+  "name": "龙卷",
+  "series": "一拳超人",
+  "vibe": "战栗·绿龙卷",
+  "palette": {
+    "primary": "#A855F7",
+    "secondary": "#3B0764",
+    "accent": "#F0ABFC",
+    "electric": "#E9D5FF"
+  }
+}

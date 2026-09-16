@@ -1,0 +1,12 @@
+{
+  "id": "marco",
+  "name": "马尔科",
+  "series": "海贼王",
+  "vibe": "不死鸟·青炎",
+  "palette": {
+    "primary": "#10B981",
+    "secondary": "#022C22",
+    "accent": "#FDE68A",
+    "electric": "#6EE7B7"
+  }
+}

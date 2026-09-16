@@ -1,0 +1,12 @@
+{
+  "id": "levi",
+  "name": "利威尔兵长",
+  "series": "进击的巨人",
+  "vibe": "兵长·钢灰",
+  "palette": {
+    "primary": "#6B7280",
+    "secondary": "#111827",
+    "accent": "#EF4444",
+    "electric": "#D1D5DB"
+  }
+}

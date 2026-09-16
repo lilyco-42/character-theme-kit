@@ -1,0 +1,12 @@
+{
+  "id": "hidan",
+  "name": "飞段",
+  "series": "火影忍者",
+  "vibe": "不死·三钩",
+  "palette": {
+    "primary": "#DC2626",
+    "secondary": "#450A0A",
+    "accent": "#FFFFFF",
+    "electric": "#FECACA"
+  }
+}
