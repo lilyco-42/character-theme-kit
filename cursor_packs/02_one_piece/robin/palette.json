@@ -1,0 +1,12 @@
+{
+  "id": "robin",
+  "name": "妮可罗宾",
+  "series": "海贼王",
+  "vibe": "恶魔·紫花",
+  "palette": {
+    "primary": "#BE185D",
+    "secondary": "#500724",
+    "accent": "#F472B6",
+    "electric": "#FBCFE8"
+  }
+}

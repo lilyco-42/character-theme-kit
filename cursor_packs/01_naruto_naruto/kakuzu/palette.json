@@ -1,0 +1,12 @@
+{
+  "id": "kakuzu",
+  "name": "角都",
+  "series": "火影忍者",
+  "vibe": "地怨·钱",
+  "palette": {
+    "primary": "#16A34A",
+    "secondary": "#052E16",
+    "accent": "#FBBF24",
+    "electric": "#86EFAC"
+  }
+}

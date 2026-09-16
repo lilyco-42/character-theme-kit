@@ -1,0 +1,12 @@
+{
+  "id": "asuka",
+  "name": "式波明日香",
+  "series": "EVA",
+  "vibe": "二号机·橙",
+  "palette": {
+    "primary": "#F97316",
+    "secondary": "#7C2D12",
+    "accent": "#EF4444",
+    "electric": "#FDBA74"
+  }
+}

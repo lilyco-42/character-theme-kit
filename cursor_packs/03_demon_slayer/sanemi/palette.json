@@ -1,0 +1,12 @@
+{
+  "id": "sanemi",
+  "name": "风柱",
+  "series": "鬼灭之刃",
+  "vibe": "风柱·希",
+  "palette": {
+    "primary": "#60A5FA",
+    "secondary": "#1E3A8A",
+    "accent": "#F97316",
+    "electric": "#BFDBFE"
+  }
+}

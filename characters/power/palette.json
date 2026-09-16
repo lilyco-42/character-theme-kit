@@ -1,0 +1,12 @@
+{
+  "id": "power",
+  "name": "帕瓦",
+  "series": "电锯人",
+  "vibe": "血之恶魔·红角",
+  "palette": {
+    "primary": "#EF4444",
+    "secondary": "#450A0A",
+    "accent": "#FDE047",
+    "electric": "#FECACA"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "makima",
+  "name": "玛奇玛",
+  "series": "电锯人",
+  "vibe": "支配者·环眼",
+  "palette": {
+    "primary": "#B91C1C",
+    "secondary": "#450A0A",
+    "accent": "#F59E0B",
+    "electric": "#FCA5A5"
+  }
+}

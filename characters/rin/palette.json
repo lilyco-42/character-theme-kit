@@ -1,0 +1,12 @@
+{
+  "id": "rin",
+  "name": "镜音铃",
+  "series": "Vocaloid",
+  "vibe": "恶之·柠檬",
+  "palette": {
+    "primary": "#FACC15",
+    "secondary": "#713F12",
+    "accent": "#F472B6",
+    "electric": "#FDE047"
+  }
+}

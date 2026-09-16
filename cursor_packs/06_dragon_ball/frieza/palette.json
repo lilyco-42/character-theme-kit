@@ -1,0 +1,12 @@
+{
+  "id": "frieza",
+  "name": "弗利萨",
+  "series": "龙珠",
+  "vibe": "最终形态·粉",
+  "palette": {
+    "primary": "#F9A8D4",
+    "secondary": "#831843",
+    "accent": "#FBCFE8",
+    "electric": "#FFFFFF"
+  }
+}

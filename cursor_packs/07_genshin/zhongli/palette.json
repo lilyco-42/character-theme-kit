@@ -1,0 +1,12 @@
+{
+  "id": "zhongli",
+  "name": "钟离",
+  "series": "原神",
+  "vibe": "岩王·璃月",
+  "palette": {
+    "primary": "#F59E0B",
+    "secondary": "#451A03",
+    "accent": "#FACC15",
+    "electric": "#FCD34D"
+  }
+}

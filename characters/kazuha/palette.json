@@ -1,0 +1,12 @@
+{
+  "id": "kazuha",
+  "name": "枫原万叶",
+  "series": "原神",
+  "vibe": "红叶·枫叶",
+  "palette": {
+    "primary": "#2DD4BF",
+    "secondary": "#134E4A",
+    "accent": "#FBBF24",
+    "electric": "#5EEAD4"
+  }
+}

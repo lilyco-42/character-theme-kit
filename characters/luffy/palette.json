@@ -1,0 +1,12 @@
+{
+  "id": "luffy",
+  "name": "蒙奇D路飞",
+  "series": "海贼王",
+  "vibe": "草帽·草帽红",
+  "palette": {
+    "primary": "#DC2626",
+    "secondary": "#1C1917",
+    "accent": "#F59E0B",
+    "electric": "#22C55E"
+  }
+}

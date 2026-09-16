@@ -1,0 +1,12 @@
+{
+  "id": "raiden",
+  "name": "雷电将军",
+  "series": "原神",
+  "vibe": "雷神·紫电",
+  "palette": {
+    "primary": "#7C3AED",
+    "secondary": "#2E1065",
+    "accent": "#FACC15",
+    "electric": "#C4B5FD"
+  }
+}

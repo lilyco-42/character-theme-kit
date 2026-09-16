@@ -1,0 +1,12 @@
+{
+  "id": "nami",
+  "name": "娜美",
+  "series": "海贼王",
+  "vibe": "盗贼·橘子橙",
+  "palette": {
+    "primary": "#FBBF24",
+    "secondary": "#78350F",
+    "accent": "#FB923C",
+    "electric": "#FEF08A"
+  }
+}

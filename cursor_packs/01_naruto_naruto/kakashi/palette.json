@@ -1,0 +1,12 @@
+{
+  "id": "kakashi",
+  "name": "旗木卡卡西",
+  "series": "火影忍者",
+  "vibe": "银白·写轮面",
+  "palette": {
+    "primary": "#64748B",
+    "secondary": "#0F172A",
+    "accent": "#A78BFA",
+    "electric": "#94A3B8"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "toge",
+  "name": "狗卷棘",
+  "series": "咒术回战",
+  "vibe": "咒语·鲑鱼",
+  "palette": {
+    "primary": "#FBBF24",
+    "secondary": "#78350F",
+    "accent": "#0EA5E9",
+    "electric": "#FDE68A"
+  }
+}

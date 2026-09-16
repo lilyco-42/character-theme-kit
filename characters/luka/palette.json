@@ -1,0 +1,12 @@
+{
+  "id": "luka",
+  "name": "巡音流歌",
+  "series": "Vocaloid",
+  "vibe": "巡音·粉红",
+  "palette": {
+    "primary": "#F472B6",
+    "secondary": "#831843",
+    "accent": "#FBBF24",
+    "electric": "#FCE7F3"
+  }
+}

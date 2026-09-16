@@ -1,0 +1,12 @@
+{
+  "id": "pic",
+  "name": "皮克",
+  "series": "进击的巨人",
+  "vibe": "车夫·皮克",
+  "palette": {
+    "primary": "#9CA3AF",
+    "secondary": "#1F2937",
+    "accent": "#EC4899",
+    "electric": "#E5E7EB"
+  }
+}

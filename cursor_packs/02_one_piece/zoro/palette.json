@@ -1,0 +1,12 @@
+{
+  "id": "zoro",
+  "name": "罗罗诺亚索隆",
+  "series": "海贼王",
+  "vibe": "三刀·浪绿",
+  "palette": {
+    "primary": "#16A34A",
+    "secondary": "#14532D",
+    "accent": "#EF4444",
+    "electric": "#86EFAC"
+  }
+}

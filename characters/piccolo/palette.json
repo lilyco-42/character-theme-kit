@@ -1,0 +1,12 @@
+{
+  "id": "piccolo",
+  "name": "短笛",
+  "series": "龙珠",
+  "vibe": "那美克·绿",
+  "palette": {
+    "primary": "#166534",
+    "secondary": "#052E16",
+    "accent": "#22C55E",
+    "electric": "#86EFAC"
+  }
+}

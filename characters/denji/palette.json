@@ -1,0 +1,12 @@
+{
+  "id": "denji",
+  "name": "那由多",
+  "series": "电锯人",
+  "vibe": "轨道·黑",
+  "palette": {
+    "primary": "#1F2937",
+    "secondary": "#030712",
+    "accent": "#6B7280",
+    "electric": "#4B5563"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "obito",
+  "name": "带土",
+  "series": "火影忍者",
+  "vibe": "土褐·假面",
+  "palette": {
+    "primary": "#7C2D12",
+    "secondary": "#1C1917",
+    "accent": "#DC2626",
+    "electric": "#F97316"
+  }
+}

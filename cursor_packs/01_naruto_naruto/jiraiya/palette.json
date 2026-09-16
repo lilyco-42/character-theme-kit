@@ -1,0 +1,12 @@
+{
+  "id": "jiraiya",
+  "name": "自来也",
+  "series": "火影忍者",
+  "vibe": "白髪·仙鸣",
+  "palette": {
+    "primary": "#92400E",
+    "secondary": "#1C1917",
+    "accent": "#F59E0B",
+    "electric": "#FBBF24"
+  }
+}

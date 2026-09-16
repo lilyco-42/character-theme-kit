@@ -1,0 +1,12 @@
+{
+  "id": "goku",
+  "name": "孙悟空",
+  "series": "龙珠",
+  "vibe": "龟仙·橙蓝",
+  "palette": {
+    "primary": "#16A34A",
+    "secondary": "#14532D",
+    "accent": "#F59E0B",
+    "electric": "#FBBF24"
+  }
+}

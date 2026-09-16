@@ -1,0 +1,12 @@
+{
+  "id": "tsunade",
+  "name": "纲手",
+  "series": "火影忍者",
+  "vibe": "百豪·纲手",
+  "palette": {
+    "primary": "#F472B6",
+    "secondary": "#831843",
+    "accent": "#FBBF24",
+    "electric": "#FCE7F3"
+  }
+}

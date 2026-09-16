@@ -1,0 +1,12 @@
+{
+  "id": "gohan",
+  "name": "悟饭",
+  "series": "龙珠",
+  "vibe": "赛亚·橙",
+  "palette": {
+    "primary": "#16A34A",
+    "secondary": "#14532D",
+    "accent": "#FBBF24",
+    "electric": "#86EFAC"
+  }
+}

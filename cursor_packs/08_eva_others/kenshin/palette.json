@@ -1,0 +1,12 @@
+{
+  "id": "kenshin",
+  "name": "绯村剑心",
+  "series": "浪客剑心",
+  "vibe": "浪客·十字伤",
+  "palette": {
+    "primary": "#DC2626",
+    "secondary": "#450A0A",
+    "accent": "#F59E0B",
+    "electric": "#FECACA"
+  }
+}

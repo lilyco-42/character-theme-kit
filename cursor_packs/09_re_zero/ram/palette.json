@@ -1,0 +1,12 @@
+{
+  "id": "ram",
+  "name": "拉姆",
+  "series": "Re从零开始",
+  "vibe": "鬼族·黄",
+  "palette": {
+    "primary": "#FBBF24",
+    "secondary": "#78350F",
+    "accent": "#F472B6",
+    "electric": "#FDE68A"
+  }
+}

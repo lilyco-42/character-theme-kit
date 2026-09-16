@@ -1,0 +1,12 @@
+{
+  "id": "zenitsu",
+  "name": "我妻善逸",
+  "series": "鬼灭之刃",
+  "vibe": "雷之呼吸·金",
+  "palette": {
+    "primary": "#FACC15",
+    "secondary": "#713F12",
+    "accent": "#FDE047",
+    "electric": "#FFFFFF"
+  }
+}

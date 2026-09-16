@@ -1,0 +1,32 @@
+:root, [data-theme="zenitsu"] {
+  --char-primary: #FACC15;
+  --char-primary-hover: #FACC15;
+  --char-primary-active: #967A0C;
+  --char-secondary: #713F12;
+  --char-accent: #FDE047;
+  --char-electric: #FFFFFF;
+  --char-bg: #100902;
+  --char-surface: #271606;
+  --char-surface-2: #381F09;
+  --char-border: #43250A;
+  --char-text: #F1F0FF;
+  --char-text-muted: #909099;
+  --char-danger: #DC2626;
+  --char-success: #22C55E;
+  --char-glow: 0 0 24px rgba(7D660A,0.5);
+  --char-radius: 6px;
+}
+.ctk-body { background: var(--char-bg); color: var(--char-text); font-family: sans-serif; margin:0; padding:24px; min-height:100vh; }
+.ctk-btn { display:inline-flex; padding:10px 22px; border-radius:6px; border:1px solid transparent; font-size:14px; font-weight:600; cursor:pointer; transition:all .2s; }
+.ctk-btn-primary { background:linear-gradient(135deg,var(--char-primary),var(--char-primary-active)); color:#fff; box-shadow:var(--char-glow); }
+.ctk-btn-primary:hover { transform:translateY(-1px); }
+.ctk-btn-secondary { background:var(--char-surface-2); color:var(--char-text); border-color:var(--char-border); }
+.ctk-btn-danger { background:transparent; color:var(--char-accent); border-color:var(--char-accent); }
+.ctk-card { background:var(--char-surface); border:1px solid var(--char-border); border-radius:6px; padding:20px; margin:12px 0; }
+.ctk-card-title { font-size:18px; margin:0 0 8px; }
+.ctk-card-text { color:var(--char-text-muted); font-size:14px; line-height:1.6; }
+.ctk-input { background:var(--char-surface-2); border:1px solid var(--char-border); border-radius:6px; padding:10px 14px; color:var(--char-text); outline:none; }
+.ctk-input:focus { border-color:var(--char-primary); box-shadow:var(--char-glow); }
+.ctk-badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:12px; font-weight:700; background:#322804; color:#FACC15; border:1px solid #FACC15; margin-right:6px; }
+.ctk-progress { width:100%; height:6px; background:var(--char-surface-2); border-radius:999px; overflow:hidden; }
+.ctk-progress-bar { height:100%; background:linear-gradient(90deg,var(--char-primary),var(--char-electric)); border-radius:999px; }

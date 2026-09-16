@@ -1,0 +1,12 @@
+{
+  "id": "madara",
+  "name": "宇智波斑",
+  "series": "火影忍者",
+  "vibe": "血红·魔王",
+  "palette": {
+    "primary": "#7F1D1D",
+    "secondary": "#0A0A0A",
+    "accent": "#B91C1C",
+    "electric": "#F97316"
+  }
+}

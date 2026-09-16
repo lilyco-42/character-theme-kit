@@ -1,0 +1,12 @@
+{
+  "id": "nahida",
+  "name": "纳西妲",
+  "series": "原神",
+  "vibe": "草神·小吉祥",
+  "palette": {
+    "primary": "#86EFAC",
+    "secondary": "#14532D",
+    "accent": "#FBBF24",
+    "electric": "#BBF7D0"
+  }
+}

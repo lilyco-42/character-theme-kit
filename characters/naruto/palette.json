@@ -1,0 +1,12 @@
+{
+  "id": "naruto",
+  "name": "漩涡鸣人",
+  "series": "火影忍者",
+  "vibe": "热血橙·羁绊金",
+  "palette": {
+    "primary": "#F97316",
+    "secondary": "#1E3A8A",
+    "accent": "#EF4444",
+    "electric": "#FACC15"
+  }
+}

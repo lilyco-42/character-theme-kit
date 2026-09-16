@@ -1,0 +1,12 @@
+{
+  "id": "kid",
+  "name": "基德",
+  "series": "海贼王",
+  "vibe": "船长·磁鼓",
+  "palette": {
+    "primary": "#7C3AED",
+    "secondary": "#2E1065",
+    "accent": "#EF4444",
+    "electric": "#C4B5FD"
+  }
+}

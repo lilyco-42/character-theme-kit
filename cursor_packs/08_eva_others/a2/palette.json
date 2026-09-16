@@ -1,0 +1,12 @@
+{
+  "id": "a2",
+  "name": "A2",
+  "series": "尼尔机械纪元",
+  "vibe": "寄叶·白刃",
+  "palette": {
+    "primary": "#9CA3AF",
+    "secondary": "#030712",
+    "accent": "#EF4444",
+    "electric": "#E5E7EB"
+  }
+}

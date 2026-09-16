@@ -1,0 +1,12 @@
+{
+  "id": "itachi",
+  "name": "宇智波鼬",
+  "series": "火影忍者",
+  "vibe": "朱红·晓之云",
+  "palette": {
+    "primary": "#DC2626",
+    "secondary": "#1F1410",
+    "accent": "#FBBF24",
+    "electric": "#EF4444"
+  }
+}

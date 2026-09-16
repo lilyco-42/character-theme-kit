@@ -1,0 +1,12 @@
+{
+  "id": "ganyu",
+  "name": "甘雨",
+  "series": "原神",
+  "vibe": "半仙·仙兽",
+  "palette": {
+    "primary": "#A5F3FC",
+    "secondary": "#155E75",
+    "accent": "#EC4899",
+    "electric": "#CFFAFE"
+  }
+}

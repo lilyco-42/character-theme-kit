@@ -1,0 +1,12 @@
+{
+  "id": "frieren",
+  "name": "芙莉莲",
+  "series": "葬送的芙莉莲",
+  "vibe": "葬送·仙蓝",
+  "palette": {
+    "primary": "#7DD3FC",
+    "secondary": "#0C4A6E",
+    "accent": "#FFFFFF",
+    "electric": "#E0F2FE"
+  }
+}

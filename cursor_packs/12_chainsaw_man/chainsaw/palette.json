@@ -1,0 +1,12 @@
+{
+  "id": "chainsaw",
+  "name": "电次",
+  "series": "电锯人",
+  "vibe": "链锯·电锯",
+  "palette": {
+    "primary": "#92400E",
+    "secondary": "#451A03",
+    "accent": "#FBBF24",
+    "electric": "#FCD34D"
+  }
+}

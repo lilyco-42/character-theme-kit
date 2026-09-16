@@ -1,0 +1,12 @@
+{
+  "id": "okarun",
+  "name": "奥克伦",
+  "series": "胆大党",
+  "vibe": "变身·红",
+  "palette": {
+    "primary": "#DC2626",
+    "secondary": "#450A0A",
+    "accent": "#FACC15",
+    "electric": "#FECACA"
+  }
+}
